@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+import logo from '../../logo.svg';
 import './App.css';
 import Button from 'react-bootstrap/lib/Button';
-import MainDashboard from './component/MainDashboard/MainDashboard'
+import Dashboard from '../Dashboard/Dashboard'
 
 class App extends Component {
     componentDidMount() {
@@ -12,9 +12,9 @@ class App extends Component {
 
     render() {
         return (
-            <MainDashboard>
+            <Dashboard>
 
-            </MainDashboard>
+            </Dashboard>
         );
     }
 }
