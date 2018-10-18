@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export default class UserProfile extends Component{
     getPanelName = ()=>{
         if(this.props.match != null){
-            this.props.panelName('User');
+            this.props.panelName('User Profile');
         }
     };
     componentDidMount() {

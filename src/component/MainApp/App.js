@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
 import './App.css';
 import Dashboard from '../Dashboard/Dashboard';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../UI/Sidebar/Sidebar';
 import Navbar from '../UI/Navbar/Navbar';
 import Footer from '../UI/Footer/Footer';
-import {Switch, Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import UserProfile from '../User/UserProfile';
+import User from "../User/User";
 
 class App extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {panelName:''}
+        this.state = {panelName: ''}
     }
+
     render() {
         return (
             <div className="wrapper">
@@ -22,9 +24,11 @@ class App extends Component {
                     <Navbar name={this.state.panelName}/>
 
                     <div id="content" className="content">
-                        <Switch >
-                            <Route exact path='/' render={(props)=>(<Dashboard {...props} panelName={this.panelName}/>)} />
-                            <Route exact path='/user' render={(props)=>(<UserProfile {...props} panelName={this.panelName}/>)}/>
+                        <Switch>
+                            <Route exact path='/'
+                                   render={(props) => (<Dashboard {...props} panelName={this.panelName}/>)}/>
+                            <Route exact path='/user'
+                                   render={(props) => (<User {...props} panelName={this.panelName}/>)}/>
                         </Switch>
 
                     </div>
@@ -35,9 +39,11 @@ class App extends Component {
 
         );
     }
-    panelName = (name)=>{
-        this.setState({ panelName: name });
+
+    panelName = (name) => {
+        this.setState({panelName: name});
     }
 
 }
+
 export default App;
