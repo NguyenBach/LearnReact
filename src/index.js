@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './component/MainApp/App';
-import Sidebar from './component/Sidebar/Sidebar'
+import {BrowserRouter} from 'react-router-dom';
 
-ReactDOM.render(<App/>, document.getElementById('main-panel'));
-ReactDOM.render(<Sidebar/>, document.getElementById('main-sidebar'));
+ReactDOM.render(<BrowserRouter><App/></BrowserRouter>, document.getElementById('app'));
 
